@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <Heading size="4xl" textAlign="center" marginBottom="2rem">
         Rubbish Rabble
       </Heading>
-      <AspectRatio>
+      <AspectRatio ratio={16 / 9}>
         <iframe
           width="560"
           height="315"
