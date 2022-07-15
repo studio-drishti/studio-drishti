@@ -1,13 +1,19 @@
+import "normalize.css/normalize.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../theme";
+
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
+const theme = extendTheme({
+  fonts: {
+    heading: "Sniglet, cursive",
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -15,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Space+Grotesk:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&display=swap"
           rel="stylesheet"
         />
       </Head>

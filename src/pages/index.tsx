@@ -1,39 +1,31 @@
-import { Box, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Img, Box, Text } from "@chakra-ui/react";
+import type { NextPage } from "next";
 import Head from "next/head";
-import { Drink } from "../components/drink";
-import { Layout } from "../components/layout";
-import { getAllPosts } from "../lib/api";
-import { DrinkType } from "../types";
 
-interface IndexProps {
-  drinks: DrinkType[];
-}
-
-export default function Index({ drinks }: IndexProps) {
+const Home: NextPage = () => {
   return (
-    <>
+    <Box
+      as="main"
+      css={{
+        display: "flex",
+        minHeight: "100vh",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "2rem",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        gap: "1rem",
+      }}
+    >
       <Head>
-        <title>Soft Drinks</title>
+        <title>Studio Drishti</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        {drinks.map((drink) => (
-          <Drink key={drink.slug} {...drink} />
-        ))}
-      </Layout>
-    </>
+      <Img width="30%" src="/logo.svg" alt="Studio Drishti" />
+      <Text as="em">Focused Media</Text>
+    </Box>
   );
-}
-
-export const getStaticProps = async () => {
-  const drinks = getAllPosts([
-    "slug",
-    "title",
-    "image",
-    "ingredients",
-    "directions",
-    "content",
-  ]);
-  return {
-    props: { drinks },
-  };
 };
+
+export default Home;
