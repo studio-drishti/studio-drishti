@@ -19,6 +19,9 @@ const Home: NextPage = () => {
     >
       <Img width="30%" src="/logo.svg" alt="Studio Drishti" />
       <Text as="em">Focused Media</Text>
+      <a hidden rel="me" href="https://mastodon.social/@studiodrishti">
+        Follow us on Mastodon
+      </a>
     </Box>
   );
 };
